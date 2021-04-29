@@ -31,7 +31,7 @@ You can also create `SmartObjects` :
 
 ## Listening for changes
 
-You can listen of `SmartVars` and `SmartObjs` using the following :
+You can listen for `SmartVars` and `SmartObjs` changes using the following :
 
 ```javascript
 SmartVars.example.value.registerListener(function(val) {
