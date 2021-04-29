@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<smartVar id="test">Bonjour</smartVar>
+	<smartObj id="person">
+		<h3>Name : <smartObjField id="n">Jean</smartObjField></h3>
+		<h3>Age : <smartObjField id="age">17</smartObjField></h3>
+		<smartObj id="person_adress">
+			<h4>Street and street number : <smartObjField id="street"></smartObjField></h4>
+			<h4>City : <smartObjField id="city"></smartObjField></h4> 
+			<h4>Country : <smartObjField id="country"></smartObjField></h4> 
+		</smartObj>
+	</smartObj>
+	<button id="change">Change</button>
+	<canvas id="cvs"></canvas>
+	<script src="../src/SmartVars.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
