@@ -58,3 +58,4 @@ SmartObjs.list.value.set(/* new value*/, /* field name */);
 
 The field name allow dot notation to allow deep modifications.
 
+For now, modifying objects requires to change each field individually. However, I am working on a way to allow an object to be passed in `.set()`
