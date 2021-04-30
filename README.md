@@ -34,9 +34,12 @@ You can also create `SmartObjects` :
 You can listen for `SmartVars` and `SmartObjs` changes using the following :
 
 ```javascript
+/*
+	Val is the new value (passed in .set())
+	The return value is optional. If it's provided, the returned content will be used for the render. If not, val will be.
+*/
 SmartVars.example.value.registerListener(function(val) {
-  // Val is the new value
-  return "Test2"; // What you return will replace the variable DOM innerText without changing the original value. If no return is provided, the innerText will be val;
+  return "Test2";
 });
 ```
 
@@ -58,3 +61,18 @@ SmartObjs.list.value.set({/* Your new object */}); // Update the whole object
 ```
 
 The field name allow dot notation to make deep modifications.
+
+## Style
+
+You can change style of SmartVars by using :
+
+```javascript
+SmartVars.example.value.setStyle(/* css property */, /* property value */);
+```
+
+You can also change classes directly by using the following method :
+
+```javascript
+SmartVars.example.value.addClass(/* class name */); // add the class to the associated html node
+SmartVars.example.value.removeClass(/* class name*/); // Remove the class for the associated html node
+```

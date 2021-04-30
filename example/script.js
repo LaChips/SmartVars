@@ -1,12 +1,17 @@
 var btn = document.getElementById("change");
 
+// This function will be called whenever test value changes
+// Here, the value displayed will be "Hello" + val;
 SmartVars.test.value.registerListener(function(val) {
-  return "bonjour " + val;
+  return "Hello " + val;
 });
 
+// This function will be called whenever a person's object value is modified
+// Here, we are using the person's n field to assign test value and we sets its text color to red
 SmartObjs.person.value.registerListener(function(val) {
   // this is called when a change is made to person SmartObj
   SmartVars["test"].value.set(val.n);
+  SmartVars["test"].value.setStyle("color", "red");
 });
 
 var names = [

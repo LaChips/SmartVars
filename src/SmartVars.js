@@ -103,11 +103,19 @@ var SmartVar =  {
         }
       },
       get: function(val) {
-
         return this.dataInternal;
       },
       registerListener: function(listener) {
         this.dataListener = listener;
+      },
+      addClass: function(c) {
+        this.node.classList.add(c);
+      },
+      removeClass: function(c) {
+        this.node.classList.remove(c);
+      }
+      setStyle: function(prop, value) {
+        this.node.style[prop] = value;
       }
     }
     return smart;
@@ -118,7 +126,7 @@ var SmartVar =  {
       smartObj[field] = {value: this.create(obj[field].value, obj[field].node, field)};
     }
     return smartObj;
-  }
+  },
 };
 
 let vars = document.getElementsByTagName("smartVar");
