@@ -57,4 +57,4 @@ SmartObjs.list.value.set(/* new value*/, /* field name */); // Update a single f
 SmartObjs.list.value.set({/* Your new object */}); // Update the whole object
 ```
 
-The field name allow dot notation to allow deep modifications.
+The field name allow dot notation to make deep modifications.
