@@ -38,7 +38,6 @@ var SmartVar =  {
         return this.data[field];
       },
       cleanObj: function(obj) {
-        // NEXT : RETURN OBJ ONLY WITH DATA (recursive)
         let cleaned = {};
         for (key of Object.keys(obj)) {
           if (obj[key].value.node.localName == "smartobj") {
@@ -56,7 +55,7 @@ var SmartVar =  {
         let res = [];
         for (key of Object.keys(values)) {
           if (data[key]) {
-            if (Object.prototype.toString.call(data[key].value.data) === "[object Object]") {
+            if (this.isObject(data[key].value.data) == true) {
               res = res.concat(this.getObjNodes(values[key], data[key].value.data));
             }
             else
@@ -65,26 +64,38 @@ var SmartVar =  {
         }
         return res;
       },
+      isObject: function(obj) {
+        return Object.prototype.toString.call(obj) === "[object Object]";
+      },
+      replaceData: function(obj, data) {
+        for (key of Object.keys(data)) {
+          if (data[key] != undefined && obj[key] != undefined) {
+            if (this.isObject(data[key].value.data) == true && this.isObject(obj[key]) == true) {
+              this.replaceData(obj[key], data[key].value.data);
+            }
+            else {
+              data[key].value.set(obj[key]);
+            }
+          }
+        };
+      },
       set: function(val, field) {
         if (!field) {
-          if (Object.keys(val) > 0) {
-            for (key of Object.keys(val)) {
-              // NEXT : SET EACH OBJECT (NESTED) VALUES FROM VAL OBJECT (probably require recursivity)
-              
-            }
+          if (this.isObject(val) == true && this.isObject(val) == true) {
+            this.replaceData(val, this.data);
           }
           else
             this.data = val;
         }
-        else {
+        else if (this.isObject(val) != true) {
           this.getVar(field).value.set(val);
         }
         let to_set = this.data;
-        if (Object.prototype.toString.call(this.data) === "[object Object]") {
+        if (this.isObject(this.data) == true) {
           to_set = this.cleanObj(this.data);
         }
         val = this.dataListener(to_set) || val;
-        if (Object.prototype.toString.call(this.data) === "[object Object]") {
+        if (this.isObject(this.data) == true) {
           let to_update = this.getObjNodes(val, this.data);
           for (elem of to_update) {
             this.replaceValue(elem.node, elem.value);
@@ -92,6 +103,7 @@ var SmartVar =  {
         }
       },
       get: function(val) {
+
         return this.dataInternal;
       },
       registerListener: function(listener) {
