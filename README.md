@@ -53,9 +53,8 @@ SmartVars.example.value.set(/* new value*/);
 For `SmartObjs` there's two ways of modifying the values :
 
 ```javascript
-SmartObjs.list.value.set(/* new value*/, /* field name */);
+SmartObjs.list.value.set(/* new value*/, /* field name */); // Update a single field
+SmartObjs.list.value.set({/* Your new object */}); // Update the whole object
 ```
 
 The field name allow dot notation to allow deep modifications.
-
-For now, modifying objects requires to change each field individually. However, I am working on a way to allow an object to be passed in `.set()`
