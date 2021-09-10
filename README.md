@@ -12,7 +12,7 @@ For example :
 <SmartVar id="example">Test</SmartVar>
 ```
 
-This will create a reactive variable with the value `Test`.
+This will create a reactive variable named "example" with the value `Test`.
 
 You can also create `SmartObjects` :
 
