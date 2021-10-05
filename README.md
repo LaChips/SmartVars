@@ -2,6 +2,14 @@
 
 This script is designed to integrate reactive DOM elements easily.
 
+## Installation
+
+Simply copy the `SmartVars.js` file located in the `src` folder in your project directory and add the following at the end of your `body` element :
+
+```html
+<script type="text/javascript" src="SmartVars.js"></script>
+```
+
 ## Initialisation
 
 The reactive variables initialisation is made in the HTML using specifics tags.
@@ -76,3 +84,7 @@ You can also change classes directly by using the following method :
 SmartVars.example.value.addClass(/* class name */); // add the class to the associated html node
 SmartVars.example.value.removeClass(/* class name*/); // Remove the class for the associated html node
 ```
+
+## SmartArrays
+
+SmartArrays are comming soon...
