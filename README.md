@@ -1,6 +1,6 @@
 # SmartVars
 
-This script is designed to integrate reactive DOM elements easily.
+This script is designed to integrate reactive DOM elements easily in a classic HTML file.
 
 ## Installation
 
