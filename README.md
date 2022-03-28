@@ -1,3 +1,7 @@
+**This project is discontinued. No further development.**
+
+**A new version, more modern, more performance friendly and more maintainable is coming soon and had been renamed to ***SmartDOM***.**
+
 # SmartVars
 
 This script is designed to integrate reactive DOM elements easily in a classic HTML file.
@@ -84,7 +88,3 @@ You can also change classes directly by using the following method :
 SmartVars.example.value.addClass(/* class name */); // add the class to the associated html node
 SmartVars.example.value.removeClass(/* class name*/); // Remove the class for the associated html node
 ```
-
-## SmartArrays
-
-SmartArrays are comming soon...
