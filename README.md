@@ -1,6 +1,6 @@
 **This project is discontinued. No further development.**
 
-**A new version, more modern, more performance friendly and more maintainable is coming soon and had been renamed to ***SmartDOM***.**
+**A new version, more modern, more performance friendly and more maintainable is coming soon and has been renamed to ***SmartDOM***.**
 
 # SmartVars
 
